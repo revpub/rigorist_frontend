@@ -23,7 +23,7 @@ export const login = (
   onSuccess: (loginResponseData: LoginResponseData) => void,
   onFailure: () => void
 ) => {
-  axios.post(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/auth/login`,
+  axios.post(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/auth/login`,
     loginParams,
     defaultJsonOptions
   )
@@ -39,7 +39,7 @@ export const logout = (
   onFailure: () => void
 ) => {
 
-  axios.delete(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/auth/logout`, {
+  axios.delete(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/auth/logout`, {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json",

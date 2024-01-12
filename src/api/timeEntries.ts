@@ -28,7 +28,7 @@ export const getTimeEntries = (
   onSuccess: (timeEntriesWithId: TimeEntryWithId[]) => void,
   onFailure: () => void
 ) => {
-  axios.get(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/api/v1/timeEntries`,
+  axios.get(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/api/v1/timeEntries`,
     defaultJsonOptions
   )
     .then((response) => {
@@ -48,7 +48,7 @@ export const getTimeEntriesByActorIdAndDates = (
   onSuccess: (timeEntriesWithId: TimeEntryWithId[]) => void,
   onFailure: () => void
 ) => {
-  axios.get(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/api/v1/timeEntries?actorId=${actorId}&startDate=${startDate}&endDate=${endDate}`,
+  axios.get(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/api/v1/timeEntries?actorId=${actorId}&startDate=${startDate}&endDate=${endDate}`,
     defaultJsonOptions
   )
     .then((response) => {
@@ -66,7 +66,7 @@ export const createTimeEntry = (
   onSuccess: () => void,
   onFailure: () => void
 ) => {
-  axios.post(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/api/v1/timeEntries`,
+  axios.post(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/api/v1/timeEntries`,
     timeEntry,
     defaultJsonOptions
   )

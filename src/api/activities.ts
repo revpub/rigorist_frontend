@@ -25,7 +25,7 @@ export const createActivity = (
   onSuccess: () => void,
   onFailure: () => void
 ) => {
-  axios.post(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/api/v1/activities`,
+  axios.post(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/api/v1/activities`,
     activity,
     defaultJsonOptions
   )
@@ -43,7 +43,7 @@ export const getAllActivities = (
   onSuccess: (activitiesWithId: ActivityWithId[]) => void,
   onFailure: () => void
 ) => {
-  axios.get(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/api/v1/activities`,
+  axios.get(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/api/v1/activities`,
     defaultJsonOptions
   )
     .then((response) => {

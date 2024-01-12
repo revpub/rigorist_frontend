@@ -41,7 +41,7 @@ export const getUser = (
   onFailure: () => void
 ) => {
 
-  axios.get(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/api/v1/users/${id}`,
+  axios.get(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/api/v1/users/${id}`,
     defaultJsonOptions
   )
     .then((response) => {
@@ -72,7 +72,7 @@ export const createUser = (
   onSuccess: () => void,
   onFailure: () => void
 ) => {
-  axios.post(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/auth/createUser`,
+  axios.post(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/auth/createUser`,
     user,
     defaultJsonOptions
   )
@@ -93,7 +93,7 @@ export const updateUser = (
   onFailure: () => void
 ) => {
 
-  axios.put(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/api/v1/users/${id}`,
+  axios.put(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/api/v1/users/${id}`,
     user,
     defaultJsonOptions
   )
@@ -124,7 +124,7 @@ export const deleteUser = (
   onSuccess: () => void,
   onFailure: () => void
 ) => {
-  axios.delete(`http://localhost:${import.meta.env.VITE_BACKEND_PORT}/api/v1/users/${id}`,
+  axios.delete(`http://${import.meta.env.VITE_BACKEND_HOST}:${import.meta.env.VITE_BACKEND_PORT}/api/v1/users/${id}`,
   defaultJsonOptions
   )
   .then((response) => {
